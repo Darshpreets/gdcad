@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ui_code_dockwidget.h"
+#include "code_dockwidget.h"
+#include "command_dw.h"
+#include "ui_command_dw.h"
 
 #include <QMouseEvent>
 #include <QDebug>
@@ -23,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pointButton, SIGNAL(clicked()), this, SLOT(drawPoint()));
     connect(ui->ellipseButton, SIGNAL(clicked()), this, SLOT(drawEllipse()));
 
+    addToolbars();
 }
 
 void MainWindow::drawLine(){
@@ -134,7 +139,23 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::addToolbars() {
 
+
+    // Add Code Script
+    QDockWidget* _code = new code_dockwidget(this);
+    addDockWidget(Qt::RightDockWidgetArea, _code);
+    _code->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    _code->setMinimumWidth(280);
+    _code->setMinimumHeight(500);
+
+    // Add Command interpeter
+    QDockWidget* _command = new command_dw(this);
+    addDockWidget(Qt::BottomDockWidgetArea, _command);
+    _command->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    _command->setMinimumHeight(180);
+
+}
 
 
 

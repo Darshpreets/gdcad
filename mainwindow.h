@@ -5,6 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QPainter>
+#include <QtGui>
 #include "line.h"
 #include "circle.h"
 #include "ellipse.h"
@@ -37,6 +38,9 @@ private:
     int mEndY;
     QGraphicsScene *scene;
     QPainter *painter;
+
+private:
+    void addToolbars();
 
 private slots:
     void drawLine();

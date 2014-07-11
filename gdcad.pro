@@ -18,14 +18,17 @@ SOURCES += main.cpp\
     ellipse.cpp \
     point.cpp \
     line.cpp \
-    code.cpp
+    code_dockwidget.cpp \
+    command_dw.cpp
 
 HEADERS  += mainwindow.h \
     circle.h \
     ellipse.h \
     point.h \
     line.h \
-    code.h
+    code_dockwidget.h \
+    command_dw.h
 
 FORMS    += mainwindow.ui \
-    code.ui
+    code_dockwidget.ui \
+    command_dw.ui
